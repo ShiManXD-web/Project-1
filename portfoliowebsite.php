@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Comatible" content="IE=edge">
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Car Sale Website</title>
+    <!-- Link To CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+   <!-- Navbar -->
+  <header>
+    <div class="logo">ShiMan</div>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="Project.html">Project</a>
+      <a href="memory.html">Memory in school</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="home" id="home">
+    <div class="image">
+      <img src="Photo file/PNG 1.jpg" alt="profile">
+    </div>
+
+    <div class="content">
+      <h1>Hi, It's <span>ShiMan</span></h1>
+      <h2>I'm a <span class="typing">Developer</span></h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus labore dolores esse.
+        Odit similique doloribus tenetur doloremque.
+      </p>
+
+      <div class="social">
+        <a href="https://www.facebook.com/siipro.mann.1"><i class='bx bxl-facebook'></i></a>
+        <a href="https://t.me/ShiManXD"><i class='bx bxl-telegram'></i></a>
+        <a href="https://www.tiktok.com"><i class='bx bxl-tiktok'></i></a>
+        <a href="https://www.instagram.com"><i class='bx bxl-instagram'></i></a>
+      </div>
+
+      <a href="Project.html"><button class="btn"> View Projects</button></a>
+    </div>
+  </section>
+
+    <!-- Home -->
+    <div class="heading1">
+            <br><span><h1>About ME</h1></span>
+            <P><h3>I'm SiMan, a passionate web developer and aspiring data analyst with hands-on experience in <br>HTML, CSS, JavaScript, PHP, and MySQL. I enjoy building user-friendly, responsive web<br> applications and transforming data into meaningful insights using tools like Python, Pandas, <br>Matplotlib, and Google Colab. With a strong foundation in both frontend/backend development<br> and growing expertise in data analysis, I strive to create solutions that are not only visually<br> appealing but also data-driven, efficient, and impactful.</h3><P>
+        </div>
+    <section class="home" id="home">
+        <div class="home-text">
+            <div class="feature-grid">
+    <div class="feature-card">
+      <div class="icon">🎨</div>
+      <h3>Modern UI/UX</h3>
+      <p>Designing sleek, intuitive interfaces that provide seamless user experiences.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">📊</div>
+      <h3>Data Analysis</h3>
+      <p>Turning raw data into actionable insights using Python, Pandas, and visualization tools.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">⚡️</div>
+      <h3>Performance & Scalability</h3>
+      <p>Building fast, efficient, and scalable web applications that grow with your needs.</p>
+    </div>
+
+  </div>
+    </section>
+    <!-- Cars Section -->
+    <section class="cars" id="cars">
+        <div class="heading">
+            <span>.</span>
+        </div>
+    </section>
+    <!-- Section -->
+  <section class="tools">
+    <h1>Tools & Technologies</h1>
+    <p>Web Development & Data Analysis</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png">
+        <h3>HTML5</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png">
+        <h3>CSS3 / Tailwind</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png">
+        <h3>JavaScript</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/919/919830.png">
+        <h3>PHP</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png">
+        <h3>Python</h3>
+      </div>
+
+    </div>
+  </section>
+    <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<section class="skills-section">
+
+  <h1>My Skills & Projects Breakdown</h1>
+
+  <div class="chart-box">
+    <h2>Most Used Tools & Programming Languages</h2>
+    <canvas id="myChart"></canvas>
+  </div>
+
+</section>
+<script src="script.js"></script>
+
+    <!-- Parts Section -->
+    <section class="parts" id="parts">
+        <div class="heading">
+            <span></span>
+        </disv>
+        <!-- Section -->
+
+  <section class="projects">
+
+    <a href="#" class="back">← Back to Home</a>
+
+    <h1>My Projects</h1>
+
+    <p class="subtitle">នេះជាគម្រោងដែលខ្ញុំបានបង្កើត</p>
+
+    <div class="buttons">
+
+      <a href="Project.html"><button class="active">Project-1</button></a>
+      <a href="echo.php"><button>Electricity</button></a>
+      <a href=""><button>No</button></a>
+
+    </div>
+
+  </section>
+        <!-- Parts Container -->
+       <section class="contact">
+  <h2 class="title">Contact Me</h2>
+
+  <div class="container">
+
+    <!-- Left Side -->
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+
+      <p>📧 fannmannloy124@gmail.com</p>
+      <p>📞 +855 93 64 1515</p>
+      <p>📍 Poipet</p>
+
+      <div class="social">
+        <a href="https://t.me/ShiManXD"><i class='bx bxl-telegram'></i></a>
+        <a href="#"><i class='bx bxl-github'></i></a>
+        <a href="https://www.facebook.com/siipro.mann.1"><i class='bx bxl-facebook'></i></a>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="contact-form">
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Your Name">
+
+        <label>Email</label>
+        <input type="email" placeholder="Your Email">
+
+        <label>Message</label>
+        <textarea placeholder="Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+    <!-- Copyright -->
+    <div class="copyright">
+        <p>&#169;2026 ShiMan All Right Reserved</p>
+    </div>
+    <!-- Link To Js -->
+    <script src="main.js"></script>
+</body>
+</html>
