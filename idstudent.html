@@ -1,0 +1,279 @@
+<p><a href="portfoliowebsite.html"style="color: black; padding: 20px;"><h2><i class="bx bx-arrow-back"></i><-Back</h2></a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Semester Result Calculator</title>
+    <style>
+        :root {
+            --bg-color: #000082;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --border-color: black;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            
+            /* Status Colors */
+            --status-pass-bg: #dcfce7;
+            --status-pass-text: #166534;
+            --status-warning-bg: #fef9c3;
+            --status-warning-text: #854d0e;
+            --status-danger-bg: #fee2e2;
+            --status-danger-text: #991b1b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #111827;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #374151;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .row .form-group {
+            flex: 1;
+        }
+
+        .result-card {
+            margin-top: 30px;
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        .result-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            color: #4b5563;
+        }
+
+        .result-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .result-line:last-of-type {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .result-value {
+            font-weight: 600;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        /* Dynamic Status Classes */
+        .status-pass {
+            background-color: var(--status-pass-bg);
+            color: var(--status-pass-text);
+        }
+        .status-warning {
+            background-color: var(--status-warning-bg);
+            color: var(--status-warning-text);
+        }
+        .status-danger {
+            background-color: var(--status-danger-bg);
+            color: var(--status-danger-text);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🎓កម្មវិធីវាយតម្លៃស្ថានភាពសិស្ស</h2>
+    
+    <!-- 1. Input Phase -->
+    <div
+    s="form-group">
+        <label for="studentName">ឈ្មោះសិស្ស</label>
+        <input type="text" id="studentName" value="" placeholder="Enter student's name">
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="absences">ចំនួនអវត្តមានោ:(Absences)</label>
+            <input type="number" id="absences" value="" min="0" max="100">
+        </div>
+        <div class="form-group">
+            <label for="midtermScore">ពិន្ទុឆមាសទី១ : (Midterm)</label>
+            <input type="number" id="midtermScore" value="" min="0" max="50">
+        </div>
+        <div class="form-group">
+            <label for="finalScore">ពិន្ទុប្រឡងឆមាស : (Final)</label>
+            <input type="number" id="finalScore" value="" min="0" max="50">
+        </div>
+    </div>
+
+    <!-- 4. Output Phase Box -->
+    <div class="result-card">
+        <div class="result-title">--- លទ្ធផលឆមាសសិស្ស ---</div>
+        
+        <div class="result-line">
+            <span class="result-label">ឈ្មោះសិស្ស:</span>
+            <span class="result-value" id="outName">-</span>
+        </div>
+        <div class="result-line">
+            <span class="result-label">ពិន្ទុឆមាសទី១ (Midterm):</span>
+            <span class="result-value" id="outMidterm">0</span>
+        </div>
+        <div class="result-line">
+            <span class="result-label">ពិន្ទុប្រឡងឆមាស (Final):</span>
+            <span class="result-value" id="outFinal">0</span>
+        </div>
+        <div class="result-line">
+            <span class="result-label">ពិន្ទុសរុប:</span>
+            <span class="result-value" id="outTotal">0</span>
+        </div>
+        <div class="result-line" style="align-items: center; margin-top: 10px;">
+            <span class="result-label">ស្ថានភាពចុងក្រោយ:</span>
+            <span class="status-badge" id="outStatus">-</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Grab DOM elements
+    const studentNameInput = document.getElementById('studentName');
+    const absencesInput = document.getElementById('absences');
+    const midtermInput = document.getElementById('midtermScore');
+    const finalInput = document.getElementById('finalScore');
+
+    const outName = document.getElementById('outName');
+    const outMidterm = document.getElementById('outMidterm');
+    const outFinal = document.getElementById('outFinal');
+    const outTotal = document.getElementById('outTotal');
+    const outStatus = document.getElementById('outStatus');
+
+    function calculateResult() {
+        // 1. Input Processing
+        const name = studentNameInput.value || "មិនមាន";
+        const absences = parseInt(absencesInput.value) || 0;
+        const midtermScore = parseFloat(midtermInput.value) || 0;
+        const finalScore = parseFloat(finalInput.value) || 0;
+
+        // 2. Calculation Phase
+        const totalScore = midtermScore + finalScore;
+
+        // 3. Conditional Logic Phase (Strictly mirrored from your pseudocode)
+        let resultStatus = "";
+        let statusClass = "";
+
+        if (absences >= 16) {
+            resultStatus = "មិនអនុញ្ញាតឱ្យប្រឡង / ត្រូវរៀនឡើងវិញ";
+            statusClass = "status-danger";
+        } 
+        else if (absences >= 11 && absences <= 15) {
+            resultStatus = "មិនអនុញ្ញាតឱ្យប្រឡងធម្មតា / ត្រូវប្រឡងឡើងវិញ (Re-exam)";
+            statusClass = "status-warning";
+        } 
+        else { // Handles Absences <= 10
+            if (midtermScore < 20) {
+                resultStatus = "ត្រូវរៀនឡើងវិញ";
+                statusClass = "status-danger";
+            } 
+            else if (midtermScore >= 20 && totalScore < 60) {
+                resultStatus = "ត្រូវប្រឡងសង / ប្រឡងឡើងវិញ";
+                statusClass = "status-warning";
+            } 
+            else if (midtermScore >= 20 && totalScore >= 60) {
+                resultStatus = "ជាប់";
+                statusClass = "status-pass";
+            }
+        }
+
+        // 4. Output Phase Updates
+        outName.textContent = name;
+        outMidterm.textContent = midtermScore;
+        outFinal.textContent = finalScore;
+        outTotal.textContent = totalScore;
+        
+        outStatus.textContent = resultStatus;
+        // Reset and apply proper badge styling color
+        outStatus.className = "status-badge " + statusClass;
+    }
+
+    // Attach real-time event listeners
+    studentNameInput.addEventListener('input', calculateResult);
+    absencesInput.addEventListener('input', calculateResult);
+    midtermInput.addEventListener('input', calculateResult);
+    finalInput.addEventListener('input', calculateResult);
+
+    // Initial run on load
+    calculateResult();
+</script>
+
+</body>
+</html>
